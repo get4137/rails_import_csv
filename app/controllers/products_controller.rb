@@ -1,5 +1,6 @@
-class ProductsController < ApplicationController
+# frozen_string_literal: true
 
+class ProductsController < ApplicationController
   def index
     @products = Product.all
   end
@@ -10,8 +11,8 @@ class ProductsController < ApplicationController
 
   def create
     Product.import(params[:product][:file])
-    flash[:notice] = "Countries uploaded successfully"
+
+    flash[:notice] = 'Countries uploaded successfully'
     redirect_to products_path #=> or where you want
   end
-
 end

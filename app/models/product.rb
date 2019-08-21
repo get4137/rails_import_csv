@@ -1,5 +1,6 @@
-class Product < ApplicationRecord
+# frozen_string_literal: true
 
+class Product < ApplicationRecord
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
       company_hash = Product.new
